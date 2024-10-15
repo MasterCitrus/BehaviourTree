@@ -2,6 +2,13 @@
 
 class Agent;
 
+enum BehaviourResult
+{
+	Success,
+	Failure,
+	Pending
+};
+
 class Behaviour
 {
 public:

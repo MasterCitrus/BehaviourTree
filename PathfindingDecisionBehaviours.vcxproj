@@ -148,56 +148,48 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Agent.cpp" />
-    <ClCompile Include="ANDMultiCondition.cpp" />
     <ClCompile Include="AttackBehaviour.cpp" />
+    <ClCompile Include="Composite.cpp" />
     <ClCompile Include="DeadBehaviour.cpp" />
     <ClCompile Include="DistanceCondition.cpp" />
-    <ClCompile Include="FiniteStateMachine.cpp" />
     <ClCompile Include="FollowBehaviour.cpp" />
     <ClCompile Include="GotoBehaviour.cpp" />
     <ClCompile Include="HealthCondition.cpp" />
     <ClCompile Include="IdleBehaviour.cpp" />
     <ClCompile Include="INavigatable.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="MultiCondition.cpp" />
     <ClCompile Include="NodeMap.cpp" />
-    <ClCompile Include="ORMultiCondition.cpp" />
     <ClCompile Include="PathAgent.cpp" />
     <ClCompile Include="Pathfinding.cpp" />
     <ClCompile Include="RandomCondition.cpp" />
+    <ClCompile Include="Selector.cpp" />
     <ClCompile Include="SelectorBehaviour.cpp" />
-    <ClCompile Include="State.cpp" />
+    <ClCompile Include="Sequence.cpp" />
     <ClCompile Include="TimerCondition.cpp" />
-    <ClCompile Include="UtilityAI.cpp" />
     <ClCompile Include="WanderBehaviour.cpp" />
-    <ClCompile Include="XORMultiCondition.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Agent.h" />
-    <ClInclude Include="ANDMultiCondition.h" />
     <ClInclude Include="AttackBehaviour.h" />
     <ClInclude Include="Behaviour.h" />
+    <ClInclude Include="Composite.h" />
     <ClInclude Include="Condition.h" />
     <ClInclude Include="DeadBehaviour.h" />
     <ClInclude Include="DistanceCondition.h" />
-    <ClInclude Include="FiniteStateMachine.h" />
     <ClInclude Include="FollowBehaviour.h" />
     <ClInclude Include="GotoBehaviour.h" />
     <ClInclude Include="HealthCondition.h" />
     <ClInclude Include="IdleBehaviour.h" />
     <ClInclude Include="INavigatable.h" />
-    <ClInclude Include="MultiCondition.h" />
     <ClInclude Include="NodeMap.h" />
-    <ClInclude Include="ORMultiCondition.h" />
     <ClInclude Include="PathAgent.h" />
     <ClInclude Include="Pathfinding.h" />
     <ClInclude Include="RandomCondition.h" />
+    <ClInclude Include="Selector.h" />
     <ClInclude Include="SelectorBehaviour.h" />
-    <ClInclude Include="State.h" />
+    <ClInclude Include="Sequence.h" />
     <ClInclude Include="TimerCondition.h" />
-    <ClInclude Include="UtilityAI.h" />
     <ClInclude Include="WanderBehaviour.h" />
-    <ClInclude Include="XORMultiCondition.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
