@@ -16,7 +16,7 @@ public:
 	void SetNodeMap(NodeMap* nodeMap) { m_nodeMap = nodeMap; }
 
 	Node* GetNode() { return m_currentNode; }
-	std::vector<Node*> GetPath();
+	std::vector<Node*>& GetPath();
 	std::vector<glm::vec2> GetSmoothPath();
 	glm::vec2 GetPosition() const;
 

@@ -58,7 +58,7 @@ void PathAgent::SetSmoothPath(std::vector<glm::vec2> smoothPath)
 	m_smoothPath = smoothPath;
 }
 
-std::vector<Node*> PathAgent::GetPath()
+std::vector<Node*>& PathAgent::GetPath()
 {
 	return m_path;
 }

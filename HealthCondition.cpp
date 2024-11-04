@@ -1,8 +1,15 @@
 #include "HealthCondition.h"
 #include "Agent.h"
 
-bool HealthCondition::IsTrue(Agent* agent)
+Status HealthCondition::Update(Agent* agent, float deltaTime)
 {
-    if (!self) return agent->GetTarget()->GetHP() <= hpLimit;
-    else return agent->GetHP() <= hpLimit;
+    if (!self)
+    {
+        if (agent->GetTarget()->GetHP() <= hpLimit) return Success;
+    }
+    else
+    {
+        if (agent->GetHP() <= hpLimit) return Success;
+    }
+    return Failure;
 }

@@ -4,6 +4,6 @@
 class Selector : public Composite
 {
 public:
-	void Update(Agent* agent, float deltaTime) override;
+	Status Update(Agent* agent, float deltaTime) override;
 };
 

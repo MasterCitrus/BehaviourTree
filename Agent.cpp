@@ -5,12 +5,11 @@
 Agent::Agent(INavigatable* nodeMap, Behaviour* behaviour) : m_current{ behaviour }, m_nodeMap{ nodeMap }, m_colour{ 255, 255, 0, 255 }, m_target{ nullptr }, m_hp{ 100 }
 {
 	m_pathAgent.SetNodeMap((NodeMap*)m_nodeMap);
-	m_current->Enter(this);
 }
 
 void Agent::Update(float deltaTime)
 {
-	if (m_current) m_current->Update(this, deltaTime);
+	m_current->Update(this, deltaTime);
 	m_pathAgent.Update(deltaTime);
 }
 

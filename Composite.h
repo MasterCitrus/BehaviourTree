@@ -5,10 +5,12 @@
 class Composite : public Behaviour
 {
 public:
-	void Update(Agent* agent, float deltaTime) = 0;
+	virtual ~Composite();
+	virtual Status Update(Agent* agent, float deltaTime) = 0;
 
 	void AddChild(Behaviour* behaviour);
 protected:
 	std::vector<Behaviour*> children;
+	Behaviour* pending = nullptr;
 };
 

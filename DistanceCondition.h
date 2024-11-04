@@ -6,7 +6,7 @@ class DistanceCondition : public Condition
 public:
 	DistanceCondition(float d, bool lt) : m_distance{ d }, m_lessThan{ lt } {}
 
-	virtual bool IsTrue(Agent* agent);
+	Status Update(Agent* agent, float deltaTime);
 
 private:
 	float m_distance;

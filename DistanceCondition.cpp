@@ -2,7 +2,9 @@
 #include "glm/glm.hpp"
 #include "Agent.h"
 
-bool DistanceCondition::IsTrue(Agent* agent)
+Status DistanceCondition::Update(Agent* agent, float deltaTime)
 {
-    return (glm::distance(agent->GetPosition(), agent->GetTarget()->GetPosition()) < m_distance) == m_lessThan;
+    bool result = glm::distance(agent->GetPosition(), agent->GetTarget()->GetPosition()) < m_distance;
+    if ( result == m_lessThan) return Success;
+    else return Failure;
 }

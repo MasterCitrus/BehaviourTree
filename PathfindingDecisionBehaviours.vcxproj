@@ -149,7 +149,9 @@
   <ItemGroup>
     <ClCompile Include="Agent.cpp" />
     <ClCompile Include="AttackBehaviour.cpp" />
+    <ClCompile Include="BehaviourTreeFactory.cpp" />
     <ClCompile Include="Composite.cpp" />
+    <ClCompile Include="Creator.cpp" />
     <ClCompile Include="DeadBehaviour.cpp" />
     <ClCompile Include="DistanceCondition.cpp" />
     <ClCompile Include="FollowBehaviour.cpp" />
@@ -157,23 +159,23 @@
     <ClCompile Include="HealthCondition.cpp" />
     <ClCompile Include="IdleBehaviour.cpp" />
     <ClCompile Include="INavigatable.cpp" />
+    <ClCompile Include="Inverter.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="NodeMap.cpp" />
     <ClCompile Include="PathAgent.cpp" />
     <ClCompile Include="Pathfinding.cpp" />
-    <ClCompile Include="RandomCondition.cpp" />
     <ClCompile Include="Selector.cpp" />
-    <ClCompile Include="SelectorBehaviour.cpp" />
     <ClCompile Include="Sequence.cpp" />
-    <ClCompile Include="TimerCondition.cpp" />
     <ClCompile Include="WanderBehaviour.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Agent.h" />
     <ClInclude Include="AttackBehaviour.h" />
     <ClInclude Include="Behaviour.h" />
+    <ClInclude Include="BehaviourTreeFactory.h" />
     <ClInclude Include="Composite.h" />
     <ClInclude Include="Condition.h" />
+    <ClInclude Include="Creator.h" />
     <ClInclude Include="DeadBehaviour.h" />
     <ClInclude Include="DistanceCondition.h" />
     <ClInclude Include="FollowBehaviour.h" />
@@ -181,14 +183,12 @@
     <ClInclude Include="HealthCondition.h" />
     <ClInclude Include="IdleBehaviour.h" />
     <ClInclude Include="INavigatable.h" />
+    <ClInclude Include="Inverter.h" />
     <ClInclude Include="NodeMap.h" />
     <ClInclude Include="PathAgent.h" />
     <ClInclude Include="Pathfinding.h" />
-    <ClInclude Include="RandomCondition.h" />
     <ClInclude Include="Selector.h" />
-    <ClInclude Include="SelectorBehaviour.h" />
     <ClInclude Include="Sequence.h" />
-    <ClInclude Include="TimerCondition.h" />
     <ClInclude Include="WanderBehaviour.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

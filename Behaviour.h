@@ -1,8 +1,9 @@
 #pragma once
+#include <iostream>
 
 class Agent;
 
-enum BehaviourResult
+enum Status
 {
 	Success,
 	Failure,
@@ -12,10 +13,8 @@ enum BehaviourResult
 class Behaviour
 {
 public:
-	virtual void Enter(Agent* agent) {}
-	virtual void Update(Agent* agent, float deltaTime) = 0;
-	virtual void Exit(Agent* agent) {}
-
-	virtual float Evaluate(Agent* agent) { return 0.0f; }
+	virtual ~Behaviour() { std::cout << "Behaviour destructor\n"; }
+	virtual Status Update(Agent* agent, float deltaTime) = 0;
+	virtual void AddChild(Behaviour* behaviour) {}
 };
 

@@ -1,9 +1,33 @@
 #include "Sequence.h"
 
-void Sequence::Update(Agent* agent, float deltaTime)
+Status Sequence::Update(Agent* agent, float deltaTime)
 {
-	for (auto& child : children)
+	auto current = children.begin();
+	Behaviour* child = nullptr;
+
+	if (pending != nullptr)
 	{
-		if (child->Update(agent, deltaTime))
+		child = pending;
+		pending = nullptr;
 	}
+
+	if (child == nullptr) child = *current;
+	
+	while (current != children.end())
+	{
+		Status status = child->Update(agent, deltaTime);
+
+		if (status == Failure) return Failure;
+		else if (status == Success)
+		{
+			++current;
+			if(current != children.end()) child = *current;
+		}
+		else if (status == Pending)
+		{
+			pending = child;
+			return Pending;
+		}
+	}
+	return Success;
 }

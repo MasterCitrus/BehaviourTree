@@ -51,9 +51,6 @@
     <ClCompile Include="FollowBehaviour.cpp">
       <Filter>Source Files\Behaviours</Filter>
     </ClCompile>
-    <ClCompile Include="SelectorBehaviour.cpp">
-      <Filter>Source Files\Behaviours</Filter>
-    </ClCompile>
     <ClCompile Include="DistanceCondition.cpp">
       <Filter>Source Files\Conditions</Filter>
     </ClCompile>
@@ -69,14 +66,8 @@
     <ClCompile Include="HealthCondition.cpp">
       <Filter>Source Files\Conditions</Filter>
     </ClCompile>
-    <ClCompile Include="TimerCondition.cpp">
-      <Filter>Source Files\Conditions</Filter>
-    </ClCompile>
     <ClCompile Include="IdleBehaviour.cpp">
       <Filter>Source Files\Behaviours</Filter>
-    </ClCompile>
-    <ClCompile Include="RandomCondition.cpp">
-      <Filter>Source Files\Conditions</Filter>
     </ClCompile>
     <ClCompile Include="Composite.cpp">
       <Filter>Source Files</Filter>
@@ -85,6 +76,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Selector.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BehaviourTreeFactory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Creator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Inverter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -116,9 +116,6 @@
     <ClInclude Include="FollowBehaviour.h">
       <Filter>Header Files\Behaviour</Filter>
     </ClInclude>
-    <ClInclude Include="SelectorBehaviour.h">
-      <Filter>Header Files\Behaviour</Filter>
-    </ClInclude>
     <ClInclude Include="WanderBehaviour.h">
       <Filter>Header Files\Behaviour</Filter>
     </ClInclude>
@@ -134,14 +131,8 @@
     <ClInclude Include="HealthCondition.h">
       <Filter>Header Files\Condition</Filter>
     </ClInclude>
-    <ClInclude Include="TimerCondition.h">
-      <Filter>Header Files\Condition</Filter>
-    </ClInclude>
     <ClInclude Include="IdleBehaviour.h">
       <Filter>Header Files\Behaviour</Filter>
-    </ClInclude>
-    <ClInclude Include="RandomCondition.h">
-      <Filter>Header Files\Condition</Filter>
     </ClInclude>
     <ClInclude Include="Composite.h">
       <Filter>Header Files</Filter>
@@ -150,6 +141,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Selector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BehaviourTreeFactory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Creator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Inverter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
