@@ -6,6 +6,7 @@ Status Inverter::Update(Agent* agent, float deltaTime)
 
     if (status == Success) return Failure;
     else if (status == Failure) return Success;
+    else return Pending;
 }
 
 void Inverter::AddChild(Behaviour* child)

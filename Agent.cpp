@@ -2,9 +2,20 @@
 #include "Behaviour.h"
 #include "NodeMap.h"
 
+Agent::Agent()
+{
+	m_colour = { 255, 255, 255, 255 };
+	m_damage = 0;
+	m_current = nullptr;
+	m_hp = 100;
+	m_nodeMap = nullptr;
+	m_target = nullptr;
+}
+
 Agent::Agent(INavigatable* nodeMap, Behaviour* behaviour) : m_current{ behaviour }, m_nodeMap{ nodeMap }, m_colour{ 255, 255, 0, 255 }, m_target{ nullptr }, m_hp{ 100 }
 {
 	m_pathAgent.SetNodeMap((NodeMap*)m_nodeMap);
+	m_damage = 0;
 }
 
 void Agent::Update(float deltaTime)

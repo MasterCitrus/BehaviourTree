@@ -4,6 +4,7 @@
 class Creator
 {
 public:
+	virtual ~Creator() {}
 	Behaviour* CreateNode();
 
 protected:
@@ -54,6 +55,7 @@ public:
 class ConditionCreator
 {
 public:
+	virtual ~ConditionCreator() {}
 	Behaviour* CreateCondition(float num, bool check);
 
 protected:

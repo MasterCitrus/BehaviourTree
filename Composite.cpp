@@ -3,7 +3,13 @@
 Composite::~Composite()
 {
 	std::cout << "Composite destructor\n";
-	for (auto& child : children) delete child;
+	int i = 0;
+	for (auto& child : children)
+	{
+		delete child;
+		std::cout << "Child " << i << " deleted.\n";
+		i++;
+	}
 }
 
 void Composite::AddChild(Behaviour* behaviour)

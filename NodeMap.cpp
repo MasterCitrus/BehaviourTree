@@ -18,8 +18,8 @@ void NodeMap::Intialise(std::vector<std::string> asciiMap, int cellSize)
 	m_cellSize = cellSize;
 	const char emptySquare = '0';
 
-	m_height = asciiMap.size();
-	m_width = asciiMap[0].size();
+	m_height = static_cast<int>(asciiMap.size());
+	m_width = static_cast<int>(asciiMap[0].size());
 
 	std::cout << "\n[[MAP STATS]]\n";
 	std::cout << "Height: " << m_height << '\n';

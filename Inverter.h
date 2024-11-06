@@ -9,6 +9,6 @@ public:
 	void AddChild(Behaviour* child) override;
 
 private:
-	Behaviour* child;
+	Behaviour* child = nullptr;
 };
 

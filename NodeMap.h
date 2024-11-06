@@ -12,7 +12,7 @@ class NodeMap : public INavigatable
 {
 	int m_width, m_height;
 	int currentIndex = 0;
-	float m_cellSize;
+	int m_cellSize;
 
 	Node** m_nodes;
 

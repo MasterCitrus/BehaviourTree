@@ -8,6 +8,6 @@ public:
 	virtual Status Update(Agent* agent, float deltaTime) override;
 
 private:
-	glm::vec2 lastTargetPosition;
+	glm::vec2 lastTargetPosition = { 0, 0 };
 };
 
