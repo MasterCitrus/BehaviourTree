@@ -4,6 +4,7 @@
 class Inverter : public Behaviour
 {
 public:
+	~Inverter();
 	Status Update(Agent* agent, float deltaTime);
 
 	void AddChild(Behaviour* child) override;

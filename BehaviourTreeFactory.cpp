@@ -48,6 +48,8 @@ Behaviour* BehaviourTreeFactory::Create(INavigatable* map)
 
 	conditionCreator = new HealthConditionCreator();
 	condition = conditionCreator->CreateCondition(0.0f, false);
+	delete conditionCreator;
+	conditionCreator = nullptr;
 
 	nodeCreator = new InverterCreator();
 	Behaviour* child2 = nodeCreator->CreateNode();
@@ -73,6 +75,7 @@ Behaviour* BehaviourTreeFactory::Create(INavigatable* map)
 	nodeCreator = nullptr;
 
 	//Children of third branch
+	conditionCreator = new DistanceConditionCreator();
 	condition = conditionCreator->CreateCondition(1.0f * map->GetCellSize(), false);
 	child->AddChild(condition);
 

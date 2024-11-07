@@ -1,5 +1,10 @@
 #include "Inverter.h"
 
+Inverter::~Inverter()
+{
+    delete child;
+}
+
 Status Inverter::Update(Agent* agent, float deltaTime)
 {
     Status status = child->Update(agent, deltaTime);
