@@ -6,6 +6,7 @@ Status WanderBehaviour::Update(Agent* agent, float deltaTime)
 	agent->SetColour({ 0, 255, 255, 255 });
 	if (agent->PathComplete())
 	{
+		std::cout << "Wandering\n";
 		agent->GoTo(agent->GetNodeMap()->GetRandomNode()->position);
 		return Success;
 	}

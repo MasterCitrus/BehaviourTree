@@ -2,6 +2,7 @@
 
 Inverter::~Inverter()
 {
+    std::cout << "Inverter destructor\n";
     delete child;
 }
 

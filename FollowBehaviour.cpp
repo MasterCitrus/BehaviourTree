@@ -3,14 +3,15 @@
 
 Status FollowBehaviour::Update(Agent* agent, float deltaTime)
 {
-	Agent* target = agent->GetTarget();
+	agent->SetColour({ 255, 127, 0, 255 });
 
+	Agent* target = agent->GetTarget();
 	float distance = glm::distance(target->GetPosition(), lastTargetPosition);
 
 	if (distance > agent->GetNodeMap()->GetCellSize())
 	{
+		std::cout << "Following\n";
 		agent->Reset();
-		agent->SetColour({ 255, 127, 0, 255 });
 		lastTargetPosition = target->GetPosition();
 		agent->GoTo(lastTargetPosition);
 		return Success;

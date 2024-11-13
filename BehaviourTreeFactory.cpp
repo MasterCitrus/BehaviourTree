@@ -11,13 +11,13 @@ Behaviour* BehaviourTreeFactory::Create(INavigatable* map)
 	nodeCreator = nullptr;
 
 	//Dead Behaviour
-	//Creation of first branch
+	//Creation of Behaviour Root Node
 	nodeCreator = new SequenceCreator();
 	Behaviour* child = nodeCreator->CreateNode();
 	delete nodeCreator;
 	nodeCreator = nullptr;
 
-	//Children of first branch
+	//Children of Behaviour
 	ConditionCreator* conditionCreator = new HealthConditionCreator();
 	Behaviour* condition = conditionCreator->CreateCondition(0.0f, true);
 	child->AddChild(condition);
@@ -33,19 +33,13 @@ Behaviour* BehaviourTreeFactory::Create(INavigatable* map)
 	root->AddChild(child);
 
 	//Attack Behaviour
-	//Creation of second branch
+	//Creation of Behaviour Root Node
 	nodeCreator = new SequenceCreator();
 	child = nodeCreator->CreateNode();
 	delete nodeCreator;
 	nodeCreator = nullptr;
 
-	//Children of second branch
-	conditionCreator = new DistanceConditionCreator();
-	condition = conditionCreator->CreateCondition(1.0f * map->GetCellSize(), true);
-	child->AddChild(condition);
-	delete conditionCreator;
-	conditionCreator = nullptr;
-
+	//Children of Behaviour
 	conditionCreator = new HealthConditionCreator();
 	condition = conditionCreator->CreateCondition(0.0f, false);
 	delete conditionCreator;
@@ -55,9 +49,15 @@ Behaviour* BehaviourTreeFactory::Create(INavigatable* map)
 	Behaviour* child2 = nodeCreator->CreateNode();
 	delete nodeCreator;
 	nodeCreator = nullptr;
-	
+
 	child2->AddChild(condition);
 	child->AddChild(child2);
+
+	conditionCreator = new DistanceConditionCreator();
+	condition = conditionCreator->CreateCondition(1.0f * map->GetCellSize(), true);
+	child->AddChild(condition);
+	delete conditionCreator;
+	conditionCreator = nullptr;
 
 	nodeCreator = new AttackActionCreator();
 	action = nodeCreator->CreateNode();
@@ -68,13 +68,26 @@ Behaviour* BehaviourTreeFactory::Create(INavigatable* map)
 	root->AddChild(child);
 
 	//Follow Behaviour
-	//Creation of third branch
+	//Creation of Behaviour Root Node
 	nodeCreator = new SequenceCreator();
 	child = nodeCreator->CreateNode();
 	delete nodeCreator;
 	nodeCreator = nullptr;
 
-	//Children of third branch
+	//Children of Behaviour
+	nodeCreator = new InverterCreator();
+	child2 = nodeCreator->CreateNode();
+	delete nodeCreator;
+	nodeCreator = nullptr;
+
+	conditionCreator = new HealthConditionCreator();
+	condition = conditionCreator->CreateCondition(0.0f, false);
+	delete conditionCreator;
+	conditionCreator = nullptr;
+
+	child2->AddChild(condition);
+	child->AddChild(child2);
+
 	conditionCreator = new DistanceConditionCreator();
 	condition = conditionCreator->CreateCondition(1.0f * map->GetCellSize(), false);
 	child->AddChild(condition);
@@ -91,15 +104,28 @@ Behaviour* BehaviourTreeFactory::Create(INavigatable* map)
 	root->AddChild(child);
 
 	//Wander Behaviour
-	//Creation of fourth branch
+	//Creation of Behaviour Root Node
 	nodeCreator = new SequenceCreator();
 	child = nodeCreator->CreateNode();
 	delete nodeCreator;
 	nodeCreator = nullptr;
 
-	//Children of fourth branch
+	//Children of Behaviour
+	nodeCreator = new SelectorCreator();
+	child2 = nodeCreator->CreateNode();
+	delete nodeCreator;
+	nodeCreator = nullptr;
+
 	condition = conditionCreator->CreateCondition(4.0f * map->GetCellSize(), false);
-	child->AddChild(condition);
+	delete conditionCreator;
+	conditionCreator = nullptr;
+	child2->AddChild(condition);
+
+	conditionCreator = new HealthConditionCreator();
+	condition = conditionCreator->CreateCondition(0.0f, false);
+	child2->AddChild(condition);
+	child->AddChild(child2);
+
 
 	nodeCreator = new WanderActionCreator();
 	action = nodeCreator->CreateNode();

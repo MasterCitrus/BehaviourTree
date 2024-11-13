@@ -119,9 +119,9 @@ int main()
 		agent5.SetDamage(10);
 
 		agent2.SetTarget(&agent3);
-		agent3.SetTarget(&agent2);
+		agent3.SetTarget(&agent4);
 		agent4.SetTarget(&agent5);
-		agent5.SetTarget(&agent4);
+		agent5.SetTarget(&agent2);
 
 		std::vector<Agent*> agents;
 

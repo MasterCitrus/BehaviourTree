@@ -37,7 +37,7 @@ void PathAgent::Update(float deltaTime)
 void PathAgent::GoToNode(Node* node, NodeMap* map)
 {
 	m_path = AStarSearch(m_currentNode, node);
-	m_path = map->SmoothPath(m_path);
+	//m_path = map->SmoothPath(m_path);
 	m_currentIndex = 0;
 }
 

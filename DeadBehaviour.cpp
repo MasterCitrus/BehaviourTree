@@ -5,6 +5,11 @@ Status DeadBehaviour::Update(Agent* agent, float deltaTime)
 {
 	if (agent->GetHP() <= 0.0f)
 	{
+		if (check == 0)
+		{
+			std::cout << "Dead\n";
+			check++;
+		}
 		agent->Reset();
 		agent->SetColour({ 127, 127, 127, 255 });
 		return Success;
